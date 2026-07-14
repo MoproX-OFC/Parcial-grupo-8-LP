@@ -14,7 +14,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id_minimo', $id_minimo, PDO::PARAM_STR);
 $stmt->bindValue(':limite', (int)$limite, PDO::PARAM_INT);
 $stmt->execute();
-$usuarios = $stmt->fetchAll();
+$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
