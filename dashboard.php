@@ -11,8 +11,8 @@ $sql = "SELECT id, nombre, apellido, usuario, email
         LIMIT :limite";
 
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id_minimo', $id_minimo, PDO::PARAM_STR);
-$stmt->bindValue(':limite', (int)$limite, PDO::PARAM_INT);
+$stmt->bindValue(':id_minimo', $id_minimo, PDO::PARAM_INT);
+$stmt->bindValue(':limite', $limite, PDO::PARAM_INT);
 $stmt->execute();
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
